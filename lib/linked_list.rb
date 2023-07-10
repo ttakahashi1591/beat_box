@@ -26,4 +26,9 @@ class LinkedList
         end
         count
     end
+
+    def to_string
+        current_node = @head
+         current_node.data
+     end
 end
