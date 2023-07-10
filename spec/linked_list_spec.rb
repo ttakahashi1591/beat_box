@@ -19,7 +19,6 @@ RSpec.describe LinkedList do
 
         expect(list.head).to eq(nil)
     end
-end
 
     describe '#append method' do
         it "add data to new node" do
@@ -30,6 +29,7 @@ end
             expect(list.head.next_node).to eq(nil)
         end
     end
+
     describe '#count method' do
         it "number of nodes in list" do
             list = LinkedList.new
@@ -37,6 +37,15 @@ end
             expect(list.count).to eq(0)
             list.append("doop")
             expect(list.count).to eq(1)
+        end
+    end
+
+    describe '#string method' do
+        it "generate a string of all data in list, spearate by spaces" do
+            list = LinkedList.new
+            list.append("doop")
+
+            expect(list.to_string).to eq("doop")
         end
     end
 end
