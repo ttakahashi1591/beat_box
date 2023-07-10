@@ -1,8 +1,12 @@
 class LinkedList
-    attr_reader :head
+    attr_reader :head,
+                :next_node
+    
+    attr_accessor :next_node
 
     def initialize(head = nil)
         @head = head
+        @next_node 
     end
 
     def append(data)
@@ -10,8 +14,10 @@ class LinkedList
         if @head.nil?
             @head = new_node
         else
-            current.node = @head
-            current_node = current_node.next_node while current_node.next_node
+            current_node = @head
+            while !current_node.next_node.nil?
+                current_node = current_node.next_node
+            end
             current_node.next_node = new_node
         end
     end
@@ -29,6 +35,12 @@ class LinkedList
 
     def to_string
         current_node = @head
-         current_node.data
-     end
+        string = ""
+
+        while !current_node.nil?
+            string << current_node.data + " "
+            current_node = current_node.next_node
+        end
+       string.chop
+    end
 end
