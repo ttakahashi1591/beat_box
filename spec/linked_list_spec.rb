@@ -30,4 +30,13 @@ end
             expect(list.head.next_node).to eq(nil)
         end
     end
+    describe '#count method' do
+        it "number of nodes in list" do
+            list = LinkedList.new
+
+            expect(list.count).to eq(0)
+            list.append("doop")
+            expect(list.count).to eq(1)
+        end
+    end
 end
