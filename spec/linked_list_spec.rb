@@ -12,4 +12,22 @@ RSpec.describe LinkedList do
             expect(list).to be_an_instance_of(LinkedList)
         end
     end
+
+    describe '#head attribute' do
+    it "adds another head" do
+        list = LinkedList.new
+
+        expect(list.head).to eq(nil)
+    end
+end
+
+    describe '#append method' do
+        it "add data to new node" do
+            list = LinkedList.new
+             list.append("doop")
+
+            expect(list.head.data).to eq("doop")
+            expect(list.head.next_node).to eq(nil)
+        end
+    end
 end
