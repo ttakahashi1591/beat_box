@@ -3,7 +3,6 @@ require './lib/node'
 require './lib/linked_list'
 
 RSpec.describe LinkedList do
-    list = LinkedList.new
 
     describe '#initialize' do
         it "exists" do
@@ -30,6 +29,7 @@ RSpec.describe LinkedList do
             expect(list.head.next_node).to eq(nil)
             list.append("deep")
             expect(list.head.next_node.data).to eq("deep")
+            list.append("plop")
         end
     end
 
@@ -48,7 +48,7 @@ RSpec.describe LinkedList do
     describe '#string method' do
         it "generate a string of all data in list, spearate by spaces" do
             list = LinkedList.new
-
+# require 'pry';binding.pry
             list.append("doop")
             expect(list.to_string).to eq("doop")
             list.append("deep")
