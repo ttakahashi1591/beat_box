@@ -8,7 +8,7 @@ class LinkedList
         @head = head
         @next_node 
     end
-
+    
     def append(data)
         new_node = Node.new(data)
         if @head.nil?
