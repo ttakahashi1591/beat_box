@@ -29,7 +29,8 @@ class LinkedList
         if @head.nil?
             @head = new_node
         else
-           new_node = @head
+           new_node.next_node = @head   # set next node value = head before setting next node as head node
+           @head = new_node
         end
     end
 
