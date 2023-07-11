@@ -42,8 +42,7 @@ RSpec.describe LinkedList do
             list.append("suu")
             expect(list.head.next_node.data).to eq("suu")
             list.prepend("dop")
-            expect(list.prepend).to eq("dop")
-            expect(list.prepend.next_node).to eq(nil)
+            expect(list.head.data).to eq("dop")
         end
     end
 
