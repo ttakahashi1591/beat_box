@@ -65,7 +65,6 @@ class LinkedList
         else 
             (index - 1).times do
         break if current_node.next_node.nil?
-
         current_node = current_node.next_node
         end
 
@@ -73,4 +72,17 @@ class LinkedList
         current_node.next_node = new_node
         end
     end
-end
+
+    def find(start, count)
+        current_node = @head
+        string = ""
+        index = 0
+
+        while current_node && index < start + count
+            string << current_node.data if index >= start
+            current_node = current_node.next_node
+            index += 1
+        end
+        string.join
+    end
+end 
