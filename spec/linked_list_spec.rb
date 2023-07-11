@@ -85,7 +85,21 @@ RSpec.describe LinkedList do
             expect(list.to_string).to eq("dop plop suu")
             list.insert(1, "woo")
             expect(list.to_string).to eq("dop woo plop suu")
-            require 'pry';binding.pry
+            # require 'pry';binding.pry
+        end
+    end
+
+    describe '#find method' do
+        it "return data in first position and how many elements to return " do
+            list = LinkedList.new
+
+            list.append("woo")
+            list.append("shi")
+            list.append("shu")
+            list.append("blop")
+            list.prepend("deep")
+            list.find(2, 1)
+            expect(list.find).to eq("shi")
         end
     end
 end
