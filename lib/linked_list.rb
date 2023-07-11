@@ -55,4 +55,22 @@ class LinkedList
         end
        string.chop
     end
+
+    def insert(index, data)
+        new_node = Node.new(data)
+        current_node = @head
+
+        if index.zero? || @head.nil?
+            prepend(data)
+        else 
+            (index - 1).times do
+        break if current_node.next_node.nil?
+
+        current_node = current_node.next_node
+        end
+
+        new_node.next_node = current_node.next_node
+        current_node.next_node = new_node
+        end
+    end
 end
