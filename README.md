@@ -2,7 +2,7 @@
 
 # Iteration 1
 
-###Node Class
+### Node Class
 - Created to store Node and hold its attributes for when it is called for.
 - Store both data (sound) and next_node which is nil (nothing)
 - Added both attr_reader and att_accessor in order to ensure that all Read and Write methods were accessible in my other files. 
